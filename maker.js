@@ -22,15 +22,15 @@ function returnGrid(genere) {
     return "1";
   } else if (genere === "new") {
     return "2";
-  } else if (genere === "platformer" || "adventure") {
+  } else if (genere === "platformer" || genere === "adventure") {
     return "3";
-  } else if (genere === "action" || "shooter") {
+  } else if (genere === "action" || genere === "shooter") {
     return "4";
   } else if (genere === "strategy") {
     return "5";
   } else if (genere === "rpg") {
     return "6";
-  } else if (genere === "sports" || "simulation") {
+  } else if (genere === "sports" || genere === "simulation") {
     return "7";
   } else if (genere === "puzzle") {
     return "8";
@@ -55,7 +55,9 @@ function makeGameDiv(name, native, url, thumbnail, genere) {
     }
   })
 
-  document.getElementById(returnGrid(genere)).appendChild(div);
+  var item = document.getElementById(returnGrid(genere))
+
+  item.appendChild(div);
     
 }
 

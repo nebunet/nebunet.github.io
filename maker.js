@@ -1,22 +1,3 @@
-function openGame(url) {
-  var tab_names = ["New Tab", "Loading...", "Redirecting..."];
-  var win = window.open();
-  var iframe = win.document.createElement("iframe");
-  var body = win.document.body;
-
-  win.document.title = tab_names[Math.floor(Math.random() * 3)];
-
-  body.style.margin = 0;
-  iframe.style.position = "flex";
-  iframe.style.height = "100%";
-  iframe.style.width = "100%";
-  iframe.style.alignItems = "center";
-  iframe.style.justifyContent = "center";
-  iframe.style.border = "none";
-  iframe.src = url;
-  win.document.body.appendChild(iframe);
-}
-
 function returnGrid(genere) {
   if (genere === "featured") {
     return "1";

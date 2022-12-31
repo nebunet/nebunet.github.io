@@ -44,6 +44,7 @@ function makeGameDiv(name, native, url, thumbnail, genere) {
 
 async function getList() {
   
+  const gamenum = document.getElementById("c-title");
   const req = new Request('https://nebunet.bitbucket.io/Storage/Latest/manifest/games.json')
   var g = await fetch(req);
   g = await g.json();
@@ -53,6 +54,8 @@ async function getList() {
   var current = Object.keys(g)[i];
 
   makeGameDiv(current, g[current].native, g[current].link, g[current].image, g[current].genere);
+    
+   gamenum.innerHTML = "games (" + toString(i) + ")"
 
   }
 
